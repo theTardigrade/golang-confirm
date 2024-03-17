@@ -7,7 +7,11 @@ import (
 	"strings"
 )
 
-func Ask(question string, maxRepeats int) (response bool, err error) {
+func Ask(question string) (response bool, err error) {
+	return AskWithRepeats(question, 0)
+}
+
+func AskWithRepeats(question string, maxRepeats int) (response bool, err error) {
 	reader := bufio.NewReader(os.Stdin)
 	var responseText string
 
